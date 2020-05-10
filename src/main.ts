@@ -1,7 +1,10 @@
-/*
- * Created with @iobroker/create-adapter v1.24.2
+/**
+ * ioBroker.mystrom-wifi-button: Connect Dingz (http://www.dingz.ch) with ioBroker
+ * Copyright (c) 2020 by G. Weirich
+ * License: See LICENSE
+ *
+ * Adapter templated created with @iobroker/create-adapter v1.24.2
  */
-
 import * as utils from "@iobroker/adapter-core";
 import fetch from "node-fetch"
 
@@ -70,7 +73,7 @@ class MystromWifiButton extends utils.Adapter {
         await this.createObject("generic")
       }
     } catch (err) {
-      this.log.error("Exception in intiializer " + err)
+      this.log.error("Exception in initializer " + err)
     }
 
   }
