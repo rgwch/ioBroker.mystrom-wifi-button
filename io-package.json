@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "mystrom-wifi-button",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "news": {
-      "0.0.1": {
+      "0.1.0": {
         "en": "initial release",
         "de": "Erstveröffentlichung",
         "ru": "Начальная версия",

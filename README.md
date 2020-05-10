@@ -26,24 +26,22 @@ You can install it as a custom adapter from the admin-ui:
 
 Make sure to select "Beliebig" even though it's situated on Github:
 
-
+![](rsc/button_2.jpg)
 
 Read the warning and click "install" if you agree anyway.
 The adapter should then be in the admin pages's list:
 
-
+![](rsc/button_3.jpg)
 
 Click on the three dots near the right upper corner and then on the **+** sign in the lower left corner to create a new instance. You need a separate instance for each MyStrom Wifi Button in your Home.
-
-
 
 The configuration dialog should open after successful creation of the instance. 
 
 ## Configuration
 
-
 Enter the IP Address of the MyStrom Wifi Button for this instance. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
 
+Before pressing "save and leave" press shorty on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it sill doesn't work, try a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Bitton doesn't work. You might also chec ioBrokers Log files to see what went wrong.
 
 ## Use
 
