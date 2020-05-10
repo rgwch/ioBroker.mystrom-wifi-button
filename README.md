@@ -39,13 +39,15 @@ The configuration dialog should open after successful creation of the instance.
 
 ## Configuration
 
-Enter the IP Address of the MyStrom Wifi Button for this instance. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
+Connect the WiFi Button with a USB Port or a charger device. It's recommended to use the provided USB cable. Push the Button once. After a while it should become visible in the WLAN (check the router).
 
-Before pressing "save and leave" press shorty on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it sill doesn't work, see the 'Troubleshoot'-section below.
+Enter the IP Address of the MyStrom Wifi Button. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symbolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
+
+Before pressing "save and leave" press shortly on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it still doesn't work, see the 'Troubleshoot'-section below.
 
 ## Use
 
-The Dingz adapter No. X (starting with 0) will create ioBroker states for every button Y it controls:
+The MyStrom-Wifi-Button adapter No. X (starting with 0) will create ioBroker states for every button Y it controls:
 
 * mystrom-wifi-button.X.buttons.Y.single 
 * mystrom-wifi-button.X.buttons.Y.double
@@ -81,12 +83,13 @@ on({id: btn+"long"},()=>{
 ```
 
 ## Troubleshoot
-MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a short delay. If disconnected, ioBroker can not find it for configuration.
+MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a short delay. If disconnected, ioBroker can not find it for configuration. Configuration is only possible, wenn the Button is connected to a USB port. The Button+ enters configration mode, if you remove and reinsert batteries.
+
 If the indicator in the instances tab doesn't turn green:
 
 * make sure, you gave the correct IP Address of the button. Use a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Button doesn't work. If you receive a JSON Data Structure, the Button is alive. Try to reload the Adapter instance.
 
-* Check the entries in the "Log" Tab of ioBroker
+* Check the entries in the "Log" Tab of ioBroker. If it says "ETIMEDOUT" or "EHOSTUNREACH", the Button was not found. Disconnect and reconnect from the USB and press the Button. Try to find it with the browser.  If t says something like "Only absolute URLs are supported", you had probably a typo in the URL.
 
 
 ## Changelog

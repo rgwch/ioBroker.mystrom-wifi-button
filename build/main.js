@@ -1,7 +1,4 @@
 "use strict";
-/*
- * Created with @iobroker/create-adapter v1.24.2
- */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,6 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * ioBroker.mystrom-wifi-button: Connect Dingz (http://www.dingz.ch) with ioBroker
+ * Copyright (c) 2020 by G. Weirich
+ * License: See LICENSE
+ *
+ * Adapter templated created with @iobroker/create-adapter v1.24.2
+ */
 const utils = require("@iobroker/adapter-core");
 const node_fetch_1 = require("node-fetch");
 const API = "/api/v1/";
@@ -51,7 +55,7 @@ class MystromWifiButton extends utils.Adapter {
                 }
             }
             catch (err) {
-                this.log.error("Exception in intiializer " + err);
+                this.log.error("Exception in initializer " + err);
             }
         });
     }
