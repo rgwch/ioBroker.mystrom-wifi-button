@@ -22,6 +22,10 @@
     function load(settings, onChange) {
       // example: select elements with id=key and class=value and insert value
       if (!settings) return;
+      if (!settings.hostip) {
+        const href = `${window.location.protocol || "http:"}//${window.location.hostname || "127.0.0.1"}:8087`
+        settings.hostip = href
+      }
       $('.value').each(function () {
         var $key = $(this);
         var id = $key.attr('id');

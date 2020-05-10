@@ -5,6 +5,21 @@
 import * as utils from "@iobroker/adapter-core";
 import fetch from "node-fetch"
 
+type DeviceInfo = {
+  type: string;
+  battery: boolean;
+  reachable: boolean;
+  meshroot: boolean;
+  charge: boolean;
+  voltage: number;
+  fw_version: string;
+  single: string;
+  double: string;
+  long: string;
+  touch: string;
+  generic: string;
+}
+
 const API = "/api/v1/"
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -35,11 +50,28 @@ class MystromWifiButton extends utils.Adapter {
    */
   private async onReady(): Promise<void> {
 
-    await this.createObject("single")
-    await this.createObject("double")
-    await this.createObject("long")
-    await this.createObject("touch")
-    await this.createObject("generic")
+    this.setState("info.connection", false, true);
+    try {
+      const response = await fetch(this.config.url + API + "device")
+      if (response.status != 200) {
+        this.log.error("could not connect to device " + response.status + ", " + response.statusText)
+      } else {
+        const di = await response.json()
+        const keys = Object.keys(di)
+        const mac = keys[0]
+        this.setState("info.deviceInfo.mac", mac, true)
+        this.setState("info.deviceInfo.details", di[mac], true)
+        this.log.info("Wifi Button Info: " + JSON.stringify(di[mac]))
+        this.setState("info.connection", true, true);
+        await this.createObject("single")
+        await this.createObject("double")
+        await this.createObject("long")
+        await this.createObject("touch")
+        await this.createObject("generic")
+      }
+    } catch (err) {
+      this.log.error("Exception in intiializer " + err)
+    }
 
   }
 
@@ -55,8 +87,9 @@ class MystromWifiButton extends utils.Adapter {
       },
       native: {},
     });
+
     const url = this.config.url + API + "action/" + name
-    const command = `get://${this.config.hostip}/set/${this.name}.${this.instance}.name?value=true`
+    const command = `get://${this.config.hostip.substr("http://".length)}/set/${this.name}.${this.instance}.${name}?value=true`
     fetch(url, {
       method: "POST",
       body: command,

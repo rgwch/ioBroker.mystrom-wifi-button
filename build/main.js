@@ -29,11 +29,30 @@ class MystromWifiButton extends utils.Adapter {
      */
     onReady() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.createObject("single");
-            yield this.createObject("double");
-            yield this.createObject("long");
-            yield this.createObject("touch");
-            yield this.createObject("generic");
+            this.setState("info.connection", false, true);
+            try {
+                const response = yield node_fetch_1.default(this.config.url + API + "device");
+                if (response.status != 200) {
+                    this.log.error("could not connect to device " + response.status + ", " + response.statusText);
+                }
+                else {
+                    const di = yield response.json();
+                    const keys = Object.keys(di);
+                    const mac = keys[0];
+                    this.setState("info.deviceInfo.mac", mac, true);
+                    this.setState("info.deviceInfo.details", di[mac], true);
+                    this.log.info("Wifi Button Info: " + JSON.stringify(di[mac]));
+                    this.setState("info.connection", true, true);
+                    yield this.createObject("single");
+                    yield this.createObject("double");
+                    yield this.createObject("long");
+                    yield this.createObject("touch");
+                    yield this.createObject("generic");
+                }
+            }
+            catch (err) {
+                this.log.error("Exception in intiializer " + err);
+            }
         });
     }
     createObject(name) {
@@ -50,7 +69,7 @@ class MystromWifiButton extends utils.Adapter {
                 native: {},
             });
             const url = this.config.url + API + "action/" + name;
-            const command = `get://${this.config.hostip}/set/${this.name}.${this.instance}.name?value=true`;
+            const command = `get://${this.config.hostip.substr("http://".length)}/set/${this.name}.${this.instance}.${name}?value=true`;
             node_fetch_1.default(url, {
                 method: "POST",
                 body: command,

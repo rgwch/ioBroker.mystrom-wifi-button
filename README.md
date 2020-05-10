@@ -1,95 +1,91 @@
 ![Logo](admin/mystrom-wifi-button.png)
 # ioBroker.mystrom-wifi-button
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-button.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-button)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.mystrom-wifi-button.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-button)
-![Number of Installations (latest)](http://iobroker.live/badges/mystrom-wifi-button-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/mystrom-wifi-button-stable.svg)
-[![Dependency Status](https://img.shields.io/david/rgwch/iobroker.mystrom-wifi-button.svg)](https://david-dm.org/rgwch/iobroker.mystrom-wifi-button)
-[![Known Vulnerabilities](https://snyk.io/test/github/rgwch/ioBroker.mystrom-wifi-button/badge.svg)](https://snyk.io/test/github/rgwch/ioBroker.mystrom-wifi-button)
+## What it is
 
-[![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-button.png?downloads=true)](https://nodei.co/npm/iobroker.mystrom-wifi-button/)
+This is an adapter to connect [MyStrom Wifi Buttons](https://mystrom.ch/de/wifi-button/) devices with the [ioBroker](http://iobroker.net) home automation system. A Mystrom Wifi Button features can issue three or four different actions (depending on the model), for single press, double press, long press, and touch.
 
-## mystrom-wifi-button adapter for ioBroker
+With this adapter, a MyStrom Wifi Button can control anything in the ioBroker ecosystem.
 
-Define WiFi Button Actions from ioBroker
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
+## Software Installation
 
-### Getting started
+### Prerequisites
 
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.mystrom-wifi-button`
-1. Initialize the current folder as a new git repository:  
-    ```bash
-    git init
-    git add .
-    git commit -m "Initial commit"
-    ```
-1. Link your local repository with the one on GitHub:  
-    ```bash
-    git remote add origin https://github.com/rgwch/ioBroker.mystrom-wifi-button
-    ```
+- A working instance of [ioBroker](http://www.iobroker.net). If you only want a quick test-install, I recommend using [docker](https://www.docker.com/):  
+`docker run -p 8081:8081 -p 8087:8087 -p 8082:8082 --name iobroker -v iobrokerdata:/opt/iobroker buanet/iobroker:latest`
 
-1. Push all files to the GitHub repo:  
-    ```bash
-    git push origin master
-    ```
-1. Head over to [src/main.ts](src/main.ts) and start programming!
+- At least the adapter "Simple RESTful API" must be installed in the ioBroker instance.
 
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
+### Fetch and install ioBroker.mystrom-wifi-button
 
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description                                              |
-|-------------|----------------------------------------------------------|
-| `build`    | Re-compile the TypeScript sources.                       |
-| `watch`     | Re-compile the TypeScript sources and watch for changes. |
-| `test:ts`   | Executes the tests you defined in `*.test.ts` files.     |
-| `test:package`    | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:unit`       | Tests the adapter startup with unit tests (fast, but might require module mocks to work). |
-| `test:integration`| Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
+This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list.
+You can install it as a custom adapter from the admin-ui:
 
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
+![](rsc/dingz_1.jpg)
 
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
+Make sure to select "Beliebig" even though it's situated on Github:
 
-### Publishing the adapter
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
 
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-    ```bash
-    npm pack
-    ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-    ```bash
-    cd /opt/iobroker
-    npm i /path/to/tarball.tgz
-    ```
 
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.mystrom-wifi-button`)
-1. Execute `iobroker upload mystrom-wifi-button` on the ioBroker host
+Read the warning and click "install" if you agree anyway.
+The adapter should then be in the admin pages's list:
+
+
+
+Click on the three dots near the right upper corner and then on the **+** sign in the lower left corner to create a new instance. You need a separate instance for each MyStrom Wifi Button in your Home.
+
+
+
+The configuration dialog should open after successful creation of the instance. 
+
+## Configuration
+
+
+Enter the IP Address of the MyStrom Wifi Button for this instance. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
+
+
+## Use
+
+The Dingz adapter No. X (starting with 0) will create ioBroker states for every button Y it controls:
+
+* mystrom-wifi-button.X.buttons.Y.single 
+* mystrom-wifi-button.X.buttons.Y.double
+* mystrom-wifi-button.X.buttons.Y.long
+
+Detailed informations on the MyStrom WiFi Button and its connection state are found in mystrom-wifi-button.X.info
+
+Use the states in ioBroker Scripting or VIS UI design to react on user interactions with a controlled button (direct press or via app/web control). Example:
+
+```javascript
+const btn="mystrom-wifi-button.0."
+
+on({id:btn+"single"},()=>{
+    log("Button single press received","info")
+})
+
+on({id:btn+"double"},()=>{
+    log("Button double press received","info")
+})
+
+on({id: btn+"long"},()=>{
+  log("Someone pressed the Wifi Button for more than 2 seconds!","info")
+  setState("tradfri.0.xyz",true)
+  setState("boombox.1.volume","100%")
+  setState("musicbox.songselect","we are the champions")
+  // Play for 1 minute
+  setTimeout(()=>{
+    setState("tradfri.0.xyz",false)
+    setState("boombox.1.volume","20%")
+    setState("musicbox.songselect","")
+  },60000)
+})
+```
+
 
 ## Changelog
 
-### 0.0.1
+### 0.1.0
 * (rgwch) initial release
 
 ## License
