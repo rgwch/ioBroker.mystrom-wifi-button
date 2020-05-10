@@ -41,7 +41,7 @@ The configuration dialog should open after successful creation of the instance.
 
 Enter the IP Address of the MyStrom Wifi Button for this instance. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
 
-Before pressing "save and leave" press shorty on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it sill doesn't work, try a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Bitton doesn't work. You might also chec ioBrokers Log files to see what went wrong.
+Before pressing "save and leave" press shorty on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it sill doesn't work, see the 'Troubleshoot'-section below.
 
 ## Use
 
@@ -79,6 +79,14 @@ on({id: btn+"long"},()=>{
   },60000)
 })
 ```
+
+## Troubleshoot
+MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a short delay. If disconnected, ioBroker can not find it for configuration.
+If the indicator in the instances tab doesn't turn green:
+
+* make sure, you gave the correct IP Address of the button. Use a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Button doesn't work. If you receive a JSON Data Structure, the Button is alive. Try to reload the Adapter instance.
+
+* Check the entries in the "Log" Tab of ioBroker
 
 
 ## Changelog
