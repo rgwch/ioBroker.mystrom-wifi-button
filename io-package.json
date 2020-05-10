@@ -1,0 +1,78 @@
+{
+    "common": {
+        "name": "mystrom-wifi-button",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Mystrom Wifi Button",
+        "titleLang": {
+            "en": "Mystrom Wifi Button",
+            "de": "Mystrom Wifi Button",
+            "ru": "Mystrom Wifi Button",
+            "pt": "Botão de Mystrom Wifi",
+            "nl": "Mystrom Wifi-knop",
+            "fr": "Bouton Wifi Mystrom",
+            "it": "Pulsante Wifi Mystrom",
+            "es": "Mystrom Wifi Button",
+            "pl": "Przycisk Mystrom Wifi",
+            "zh-cn": "Mystrom Wifi按钮"
+        },
+        "desc": {
+            "en": "Define WiFi Button Actions from ioBroker",
+            "de": "Definieren Sie WiFi-Schaltflächenaktionen in ioBroker",
+            "ru": "Определить действия кнопки WiFi от ioBroker",
+            "pt": "Definir ações de botão WiFi no ioBroker",
+            "nl": "Definieer WiFi-knopacties vanuit ioBroker",
+            "fr": "Définir les actions des boutons WiFi depuis ioBroker",
+            "it": "Definire le azioni dei pulsanti WiFi da ioBroker",
+            "es": "Definir acciones de botón WiFi desde ioBroker",
+            "pl": "Zdefiniuj akcje przycisku WiFi z ioBroker",
+            "zh-cn": "通过ioBroker定义WiFi按钮操作"
+        },
+        "authors": [
+            "rgwch <rgw@rgw.ch>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "mystrom",
+            "button"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "build/main.js",
+        "icon": "mystrom-wifi-button.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-button/master/admin/mystrom-wifi-button.png",
+        "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-button/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "iot-systems",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
