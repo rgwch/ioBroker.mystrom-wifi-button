@@ -3,9 +3,9 @@
 
 ## What it is
 
-This is an adapter to connect [MyStrom Wifi Buttons](https://mystrom.ch/de/wifi-button/) devices with the [ioBroker](http://iobroker.net) home automation system. A Mystrom Wifi Button features can issue three or four different actions (depending on the model), for single press, double press, long press, and touch.
+This is an adapter to connect [MyStrom Wifi Buttons](https://mystrom.ch/de/wifi-button/) devices with the [ioBroker](http://iobroker.net) home automation system. A Mystrom Wifi Button can send three or four different REST Calls (depending on the model), for single press, double press, long press, and touch.
 
-With this adapter, a MyStrom Wifi Button can control anything in the ioBroker ecosystem.
+With this adapter, a MyStrom Wifi Button can execute any commands in the ioBroker ecosystem.
 
 
 ## Software Installation
@@ -16,6 +16,8 @@ With this adapter, a MyStrom Wifi Button can control anything in the ioBroker ec
 `docker run -p 8081:8081 -p 8087:8087 -p 8082:8082 --name iobroker -v iobrokerdata:/opt/iobroker buanet/iobroker:latest`
 
 - At least the adapter "Simple RESTful API" must be installed in the ioBroker instance.
+
+- The MyStrom Wifi Button should already be activated and connected to the WLAN (use the MyStrom App for that).
 
 ### Fetch and install ioBroker.mystrom-wifi-button
 
@@ -39,6 +41,8 @@ The configuration dialog should open after successful creation of the instance.
 
 ## Configuration
 
+![](rsc/button_4.jpg)
+
 Connect the WiFi Button with a USB Port or a charger device. It's recommended to use the provided USB cable. Push the Button once. After a while it should become visible in the WLAN (check the router).
 
 Enter the IP Address of the MyStrom Wifi Button. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symbolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
@@ -47,11 +51,11 @@ Before pressing "save and leave" press shortly on the button to activate it. Som
 
 ## Use
 
-The MyStrom-Wifi-Button adapter No. X (starting with 0) will create ioBroker states for every button Y it controls:
+The MyStrom-Wifi-Button adapter No. X (starting with 0) will create ioBroker states for every action:
 
-* mystrom-wifi-button.X.buttons.Y.single 
-* mystrom-wifi-button.X.buttons.Y.double
-* mystrom-wifi-button.X.buttons.Y.long
+* mystrom-wifi-button.X.single 
+* mystrom-wifi-button.X.double
+* mystrom-wifi-button.X.long
 
 Detailed informations on the MyStrom WiFi Button and its connection state are found in mystrom-wifi-button.X.info
 
@@ -72,7 +76,7 @@ on({id: btn+"long"},()=>{
   log("Someone pressed the Wifi Button for more than 2 seconds!","info")
   setState("tradfri.0.xyz",true)
   setState("boombox.1.volume","100%")
-  setState("musicbox.songselect","we are the champions")
+  setState("musicbox.songselect","beethoven 5")
   // Play for 1 minute
   setTimeout(()=>{
     setState("tradfri.0.xyz",false)
@@ -83,7 +87,7 @@ on({id: btn+"long"},()=>{
 ```
 
 ## Troubleshoot
-MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a short delay. If disconnected, ioBroker can not find it for configuration. Configuration is only possible, wenn the Button is connected to a USB port. The Button+ enters configration mode, if you remove and reinsert batteries.
+MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a short delay. If disconnected, ioBroker can not find it for configuration. Configuration is only possible, wenn the Button is connected to a USB port. (The Button+ enters configration mode, if you remove and reinsert batteries).
 
 If the indicator in the instances tab doesn't turn green:
 
@@ -93,6 +97,10 @@ If the indicator in the instances tab doesn't turn green:
 
 
 ## Changelog
+
+### 0.1.2
+* (rgwch) Small Bugfixes
+* (rgwch) Corrected documentation
 
 ### 0.1.0
 * (rgwch) initial release
