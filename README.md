@@ -23,7 +23,6 @@ With this adapter, a MyStrom Wifi Button can execute any commands in the ioBroke
 
 This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list.
 You can install it as a custom adapter from the admin-ui:
-(find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-button/releases> and copy/paste the address of the .tar.gz link)
 
 ![](rsc/dingz_1.jpg)
 
@@ -31,7 +30,10 @@ Make sure to select "Beliebig" even though it's situated on Github:
 
 ![](rsc/button_2.jpg)
 
-Read the warning and click "install" if you agree anyway.
+Find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-button/releases> and copy/paste the address of the .tar.gz link.
+
+Read the warning and click "install" if you agree.
+
 The adapter should then be in the admin pages's list:
 
 ![](rsc/button_3.jpg)
