@@ -30,7 +30,10 @@ Make sure to select "Beliebig" even though it's situated on Github:
 
 ![](rsc/button_2.jpg)
 
-Read the warning and click "install" if you agree anyway.
+Find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-button/releases> and copy/paste the address of the .tar.gz link.
+
+Read the warning and click "install" if you agree.
+
 The adapter should then be in the admin pages's list:
 
 ![](rsc/button_3.jpg)
@@ -45,7 +48,7 @@ The configuration dialog should open after successful creation of the instance.
 
 Connect the WiFi Button with a USB Port or a charger device. It's recommended to use the provided USB cable. Push the Button once. After a while it should become visible in the WLAN (check the router).
 
-Enter the IP Address of the MyStrom Wifi Button. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symbolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087 but instead find out the IP Address.
+Enter the IP Address of the MyStrom Wifi Button. You need also to indicate the address of the ioBroker server and the port you've set when configuring the "Simple RESTful" Adapter. By default, that's 8087. You should not give the symbolic network name of the ioBroker Server, e.g. `http://homecontrol.local:8087` but instead find out the IP Address, e.g. in the router's network list (And while you're there, you'll probably want to set the DHCP server to always give the same address to this MyStrom-Wifi-Button and to the ioBroker server.)
 
 Before pressing "save and leave" press shortly on the button to activate it. Sometimes the instance will remain "yellow". Then press again the WiFi Button and click "reload" in the instance view. If it still doesn't work, see the 'Troubleshoot'-section below.
 
@@ -56,6 +59,7 @@ The MyStrom-Wifi-Button adapter No. X (starting with 0) will create ioBroker sta
 * mystrom-wifi-button.X.single 
 * mystrom-wifi-button.X.double
 * mystrom-wifi-button.X.long
+* mystrom-wifi-button.X.touch  (only for the model 'Button+')
 
 Detailed informations on the MyStrom WiFi Button and its connection state are found in mystrom-wifi-button.X.info
 
@@ -127,3 +131,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## More like this
+
+* [MyStrom WiFi Switch](http://github.com/rgwch/ioBroker.mystrom-wifi-switch)
+* [Dingz](http://github.com/rgwch/ioBroker.dingz)
