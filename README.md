@@ -23,6 +23,7 @@ With this adapter, a MyStrom Wifi Button can execute any commands in the ioBroke
 
 This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list.
 You can install it as a custom adapter from the admin-ui:
+(find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-button/releases> and copy/paste the address of the .tar.gz link)
 
 ![](rsc/dingz_1.jpg)
 
@@ -56,7 +57,7 @@ The MyStrom-Wifi-Button adapter No. X (starting with 0) will create ioBroker sta
 * mystrom-wifi-button.X.single 
 * mystrom-wifi-button.X.double
 * mystrom-wifi-button.X.long
-* mystrom-wifi-button.X.touch  (only vor the model 'Button+')
+* mystrom-wifi-button.X.touch  (only for the model 'Button+')
 
 Detailed informations on the MyStrom WiFi Button and its connection state are found in mystrom-wifi-button.X.info
 
@@ -128,3 +129,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## More like this
+
+* [MyStrom WiFi Switch](http://github.com/rgwch/ioBroker.mystrom-wifi-switch)
+* [Dingz](http://github.com/rgwch/ioBroker.dingz)
