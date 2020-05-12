@@ -72,10 +72,7 @@ class MystromWifiButton extends utils.Adapter {
                 },
                 native: {},
             });
-            let url = this.config.url + API + "action/" + name;
-            if (url.indexOf("://") == -1) {
-                url = "http://" + url;
-            }
+            const url = this.config.url + API + "action/" + name;
             const command = `get://${this.config.hostip.substr("http://".length)}/set/${this.name}.${this.instance}.${name}?value=true`;
             node_fetch_1.default(url, {
                 method: "POST",
