@@ -1,4 +1,6 @@
 ![Logo](admin/mystrom-wifi-button.png)
+[![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button)
+
 # ioBroker.mystrom-wifi-button
 
 ## What it is
