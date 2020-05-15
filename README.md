@@ -1,5 +1,6 @@
 ![Logo](admin/mystrom-wifi-button.png)
 [![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button)
+[![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-button.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-button)
 
 # ioBroker.mystrom-wifi-button
 
@@ -23,8 +24,11 @@ With this adapter, a MyStrom Wifi Button can execute any commands in the ioBroke
 
 ### Fetch and install ioBroker.mystrom-wifi-button
 
-This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list.
-You can install it as a custom adapter from the admin-ui:
+This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list. You can install it either directly from NPM:
+
+[![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-button.png)](https://nodei.co/npm/iobroker.mystrom-wifi-button/)
+
+or as a custom adapter from the admin-ui:
 
 ![](rsc/dingz_1.jpg)
 
