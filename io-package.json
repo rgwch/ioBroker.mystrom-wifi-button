@@ -1,8 +1,11 @@
 {
   "common": {
     "name": "mystrom-wifi-button",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "news": {
+      "0.1.4":{
+        "en": "typo"
+      },
       "0.1.3":{
         "en": "make ready for ioBroker publish",
         "de": "Vorbereiten für die Veröffentlichung in ioBroker",
