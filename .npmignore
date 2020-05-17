@@ -36,3 +36,9 @@ admin/i18n
 
 # maintenance scripts
 maintenance/**
+
+test/
+src/
+.travis.yml
+tsconfig.json
+tsconfig.build.json
