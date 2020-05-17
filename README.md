@@ -142,3 +142,4 @@ SOFTWARE.
 
 * [MyStrom WiFi Switch](http://github.com/rgwch/ioBroker.mystrom-wifi-switch)
 * [Dingz](http://github.com/rgwch/ioBroker.dingz)
+* [MyStrom WiFi Bulb](http://github.com/rgwch/ioBroker.mystrom-wifi-bulb)
