@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mystrom-wifi-button",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Define WiFi Button Actions from ioBroker",
   "author": {
     "name": "rgwch",
