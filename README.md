@@ -101,9 +101,13 @@ MyStrom WiFi Button needs quite a strong WLAN and disconnects itself after a sho
 
 If the indicator in the instances tab doesn't turn green:
 
-* make sure, you gave the correct IP Address of the button. Use a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Button doesn't work. If you receive a JSON Data Structure, the Button is alive. Try to reload the Adapter instance.
+* make sure you gave the correct IP Address of the button. Use a Browser and navigate to `http://{IP of the button}/api/v1/info`. If that call doesn't succeed, you have either the wrong IP or the Button doesn't work. If you receive a JSON Data Structure, the Button is alive. Try to reload the Adapter instance.
 
 * Check the entries in the "Log" Tab of ioBroker. If it says "ETIMEDOUT" or "EHOSTUNREACH", the Button was not found. Disconnect and reconnect from the USB and press the Button. Try to find it with the browser.  If t says something like "Only absolute URLs are supported", you had probably a typo in the URL.
+
+* Press the Button, while it's connected with the USB and then immediately restart the instance for this button in ioBroker's instances tab. Wait a couple of seconds to check if the indicator turns yellow and then green. If not, repeat this step two or three times. If you still don't succeed, move the button closer to the router and repeat the step.
+
+Once programmed, the button behaves less excentric and usually "just works", as long as the wifi signal is strong enough. Only double clicks remained difficult for me. I prefer using single and long press only.
 
 
 ## Changelog
