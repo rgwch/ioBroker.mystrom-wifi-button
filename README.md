@@ -1,6 +1,8 @@
 ![Logo](admin/mystrom-wifi-button.png)
 [![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-button.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-button)
 [![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-button)
+![Number of Installations](http://iobroker.live/badges/mystrom-wifi-button-installed.svg) 
+
 
 # ioBroker.mystrom-wifi-button
 
